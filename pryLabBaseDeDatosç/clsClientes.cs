@@ -12,5 +12,6 @@ namespace pryLabBaseDeDatosç
     internal class clsClientes
     {
 
+
     }
 }
