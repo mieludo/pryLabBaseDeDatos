@@ -27,5 +27,11 @@ namespace pryLabBaseDeDatosç
             Form formulario = new frmListadoClientes();
             formulario.Show();
         }
+
+        private void buscarClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmBuscar();
+            formulario.Show();
+        }
     }
 }

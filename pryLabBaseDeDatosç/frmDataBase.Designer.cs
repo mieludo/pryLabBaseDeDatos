@@ -88,6 +88,7 @@
             this.buscarClientesToolStripMenuItem.Name = "buscarClientesToolStripMenuItem";
             this.buscarClientesToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.buscarClientesToolStripMenuItem.Text = "Buscar clientes";
+            this.buscarClientesToolStripMenuItem.Click += new System.EventHandler(this.buscarClientesToolStripMenuItem_Click);
             // 
             // consultaDeUnClienteToolStripMenuItem
             // 
