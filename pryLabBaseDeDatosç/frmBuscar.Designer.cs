@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBuscar));
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblDatos = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -93,6 +94,7 @@
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblNombreDos
             // 
@@ -140,6 +142,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblDatos);
             this.Controls.Add(this.lblCodigo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBuscar";
             this.Text = "Buscar";
             this.ResumeLayout(false);

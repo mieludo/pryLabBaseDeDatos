@@ -16,5 +16,11 @@ namespace pryLabBaseDeDatosç
         {
             InitializeComponent();
         }
+
+        private void frmListadoClientes_Load(object sender, EventArgs e)
+        {
+            clsClientes objClientes = new clsClientes();
+            objClientes.Listar(dgvListado);
+        }
     }
 }
