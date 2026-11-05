@@ -17,17 +17,21 @@ namespace pryLabBaseDeDatosç
             InitializeComponent();
         }
 
+        private void frmBuscar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        clsClientes objCliente = new clsClientes();
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            clsClientes objCliente = new clsClientes();
-
-            Int32 idCliente = Convert.ToInt32(txtCodigo.Text);
-
-            objCliente.BuscarCliente(idCliente);
+            objCliente.BuscarCliente(Convert.ToInt32(txtCodigo.Text));
 
             if (objCliente.IdCliente == 0)
             {
-                MessageBox.Show("El cliente no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se encontró un cliente con ese código.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 lblNombreDos.Text = "";
                 lblDeudaDos.Text = "";
                 lblLimiteDos.Text = "";
@@ -38,6 +42,9 @@ namespace pryLabBaseDeDatosç
                 lblDeudaDos.Text = objCliente.Deuda.ToString();
                 lblLimiteDos.Text = objCliente.Limite.ToString();
             }
+
+            txtCodigo.Clear();
+            txtCodigo.Focus();
         }
     }
 }

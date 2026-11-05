@@ -39,5 +39,16 @@ namespace pryLabBaseDeDatosç
             Form formulario = new frmBuscar();
             formulario.Show();
         }
+
+        private void clientesDeudoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoDeudores formularioDeudores = new frmListadoDeudores();
+            formularioDeudores.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

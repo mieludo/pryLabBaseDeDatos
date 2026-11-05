@@ -22,9 +22,10 @@ namespace pryLabBaseDeDatosç
         private void frmListadoDeudores_Load(object sender, EventArgs e)
         {
             objClientes.Deudores(dgvListado);
+
             lblCantidadDos.Text = objClientes.CantidadDeudores.ToString();
             lblTotalDos.Text = objClientes.DeudaTotal.ToString();
-            lblPromedioDos.Text = objClientes.PromedioDeuda.ToString();
+            lblPromedioDos.Text = objClientes.PromedioDeuda.ToString("0.00");
         }
     }
 }

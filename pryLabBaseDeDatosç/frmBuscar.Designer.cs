@@ -131,6 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(366, 277);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblLimiteDos);
@@ -145,6 +146,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBuscar";
             this.Text = "Buscar";
+            this.Load += new System.EventHandler(this.frmBuscar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
