@@ -419,10 +419,10 @@ namespace pryLabBaseDeDatosç
                 Font letraSubtitulo = new Font("Sans Serif", 16, FontStyle.Bold);
                 Int32 posicionY = 200;
 
-                reporte.Graphics.DrawString("Listado de clientes", letraTitulo, Brushes.Black, 100, 100);
-                reporte.Graphics.DrawString("Código", letraSubtitulo, Brushes.Black, 50, 150);
-                reporte.Graphics.DrawString("Nombre", letraSubtitulo, Brushes.Black, 150, 150);
-                reporte.Graphics.DrawString("Deuda", letraSubtitulo, Brushes.Black, 320, 150);
+                reporte.Graphics.DrawString("Listado de clientes", letraTitulo, Brushes.Red, 100, 100);
+                reporte.Graphics.DrawString("Código", letraSubtitulo, Brushes.Blue, 50, 150);
+                reporte.Graphics.DrawString("Nombre", letraSubtitulo, Brushes.Blue, 150, 150);
+                reporte.Graphics.DrawString("Deuda", letraSubtitulo, Brushes.Blue, 320, 150);
 
                 conexion.ConnectionString = CadenaConexion;
                 conexion.Open();

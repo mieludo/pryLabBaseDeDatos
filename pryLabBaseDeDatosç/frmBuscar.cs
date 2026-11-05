@@ -17,34 +17,54 @@ namespace pryLabBaseDeDatosç
             InitializeComponent();
         }
 
+        clsClientes objCliente = new clsClientes();
+
         private void frmBuscar_Load(object sender, EventArgs e)
         {
 
         }
 
-        clsClientes objCliente = new clsClientes();
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            objCliente.BuscarCliente(Convert.ToInt32(txtCodigo.Text));
-
-            if (objCliente.IdCliente == 0)
+            if (txtCodigo.Text == "")
             {
-                MessageBox.Show("No se encontró un cliente con ese código.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                lblNombreDos.Text = "";
-                lblDeudaDos.Text = "";
-                lblLimiteDos.Text = "";
+                MessageBox.Show("Ingresá el código del cliente.",
+                    "Dato incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCodigo.Focus();
             }
             else
             {
-                lblNombreDos.Text = objCliente.Nombre;
-                lblDeudaDos.Text = objCliente.Deuda.ToString();
-                lblLimiteDos.Text = objCliente.Limite.ToString();
-            }
+                try
+                {
+                    objCliente.BuscarCliente(Convert.ToInt32(txtCodigo.Text));
 
-            txtCodigo.Clear();
-            txtCodigo.Focus();
+                    if (objCliente.IdCliente == 0)
+                    {
+                        MessageBox.Show("No se encontró un cliente con ese código.",
+                            "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        lblNombreDos.Text = "";
+                        lblDeudaDos.Text = "";
+                        lblLimiteDos.Text = "";
+                    }
+                    else
+                    {
+                        lblNombreDos.Text = objCliente.Nombre;
+                        lblDeudaDos.Text = objCliente.Deuda.ToString();
+                        lblLimiteDos.Text = objCliente.Limite.ToString();
+                    }
+
+                    txtCodigo.Clear();
+                    txtCodigo.Focus();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("El código debe ser un número entero.",
+                        "Dato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtCodigo.Clear();
+                    txtCodigo.Focus();
+                }
+            }
         }
     }
 }

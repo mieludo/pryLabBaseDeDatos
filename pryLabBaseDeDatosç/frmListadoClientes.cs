@@ -19,58 +19,40 @@ namespace pryLabBaseDeDatosç
 
         clsClientes objClientes = new clsClientes();
 
-        private void frmListadoClientes_Load(
-            object sender,
-            EventArgs e)
+        private void frmListadoClientes_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnListar_Click(
-            object sender,
-            EventArgs e)
+        private void btnListar_Click(object sender, EventArgs e)
         {
             objClientes.Listar(dgvListado);
         }
 
-        private void btnListarDataSet_Click(
-            object sender,
-            EventArgs e)
+        private void btnListarDataSet_Click(object sender, EventArgs e)
         {
             objClientes.ListarDataSet(dgvDataSet);
         }
 
-        private void btnReporte_Click(
-            object sender,
-            EventArgs e)
+        private void btnReporte_Click(object sender, EventArgs e)
         {
             SaveFileDialog objArchivo = new SaveFileDialog();
 
-            objArchivo.Title =
-                "Elegí la carpeta y el nombre del archivo";
+            objArchivo.Title = "Elegí la carpeta y el nombre del archivo";
 
             objArchivo.RestoreDirectory = true;
 
-            objArchivo.Filter =
-                "Archivo CSV (*.csv)|*.csv|" +
-                "Archivo de texto (*.txt)|*.txt";
+            objArchivo.Filter = "Archivo CSV (*.csv)|*.csv|" + "Archivo de texto (*.txt)|*.txt";
 
             if (objArchivo.ShowDialog() == DialogResult.OK)
             {
-                objClientes.ReporteClientesCuadroDialogo(
-                    objArchivo.FileName);
+                objClientes.ReporteClientesCuadroDialogo(objArchivo.FileName);
 
-                MessageBox.Show(
-                    "El reporte se guardó correctamente.",
-                    "Reporte",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                MessageBox.Show("El reporte se guardó correctamente.", "Reporte", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void btnImprimir_Click(
-            object sender,
-            EventArgs e)
+        private void btnImprimir_Click(object sender, EventArgs e)
         {
             if (prtVentana.ShowDialog() == DialogResult.OK)
             {
@@ -78,12 +60,13 @@ namespace pryLabBaseDeDatosç
                     prtVentana.PrinterSettings;
 
                 prtDocumento.Print();
+
+                MessageBox.Show(
+                    "El reporte se envió a la impresora.", "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void prtDocumento_PrintPage(
-            object sender,
-            System.Drawing.Printing.PrintPageEventArgs e)
+        private void prtDocumento_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             objClientes.Imprimir(e);
         }
