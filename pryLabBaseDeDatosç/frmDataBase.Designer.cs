@@ -134,6 +134,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmDataBase";
             this.Text = "Menú - Base de datos.";
+            this.Load += new System.EventHandler(this.frmDataBase_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -17,9 +17,15 @@ namespace pryLabBaseDeDatosç
             InitializeComponent();
         }
 
-        private void bToolStripMenuItem_Click(object sender, EventArgs e)
+        private void frmDataBase_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAgregar formularioAgregar = new frmAgregar();
+            formularioAgregar.ShowDialog();
         }
 
         private void listadoDeTodosLosClientesToolStripMenuItem_Click(object sender, EventArgs e)
